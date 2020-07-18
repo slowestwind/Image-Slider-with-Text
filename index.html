@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<title>Proposal Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+<style>
+    .hSlides {display:none}
+    .w3-left, .w3-right, .w3-badge {cursor:pointer}
+    .w3-badge {height:13px;width:13px;padding:0}
+    #back-slide{
+      position: absolute;
+      z-index: 0;
+    }
+    #front-slide{
+      position: absolute;
+      left: 20%;
+      top: 20vh;
+    }
+
+
+</style>
+<body>
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m8 w3-padding-large w3-hide-small">
+      <div class="w3-content w3-section" style="width: 250px;" id="back-slide">
+            <img class="vSlides w3-animate-opacity" src="img/v1.jpeg" style="width:100%">
+            <img class="vSlides w3-animate-opacity" src="img/v2.jpg" style="width:100%">
+            <img class="vSlides w3-animate-opacity" src="img/v3.jpg" style="width:100%">
+      </div>
+      <div class="w3-content w3-display-container" style="width:450px" id="front-slide">
+          <img class="hSlides" src="img/h1.jpg" style="width:100%">
+          <img class="hSlides" src="img/h2.jpg" style="width:100%">
+          <img class="hSlides" src="img/h3.jpg" style="width:100%">
+          <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+              <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+              <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+              <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+              <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+              <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+           </div>
+        </div>
+    </div>
+
+    <div class="w3-col m4 w3-padding-64">
+      <h6>LOOK LIKE AN EXPERT RIGHT FROM THE START</h6>
+      <h3>AWARD-WINNING DESIGN</h3>
+      <p>Design is not for philosophy it's for life. Stand out wth a professional website, portfolio, or online store. Our expertise comes from a team of IIT alumnus.</p>
+      <button type="submit" name="button">CONTACT US</button>
+    </div>
+  </div>
+</div>
+
+<script>
+
+// slide counter
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("hSlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("hSlides");
+  var y = document.getElementsByClassName("vSlides");
+
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+    y[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  y[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 5000);       
+}
+</script>
+
+</body>
+</html> 

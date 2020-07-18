@@ -1,0 +1,43 @@
+
+h3 {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+h6 {
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  font-size: 10px;
+  color: #9F9C95;
+  letter-spacing: 1px;
+}
+
+p {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 16px;
+  color: #9F9C95;
+}
+
+button {
+  padding: 5px;
+  font-family: 'Varela Round', sans-serif;
+  border: 2px solid black;
+  border-radius: 1px;
+  width: 40%;
+  height: 5vh;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.mySlides {display:none}
+
+
+.w3-left, .w3-right, .w3-badge {
+  cursor:pointer
+}
+
+.w3-badge {
+  height:13px;width:13px;padding:0
+}
